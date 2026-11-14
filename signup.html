@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | LibraDesk</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="layout.css"><script src="theme.js" defer></script><script src="auth.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">L</span> LibraDesk</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="main-nav"><a href="index.html">Overview</a><a href="register.html">Member registration</a><a href="signin.html">Sign in</a><button class="theme-toggle" type="button">🌙</button></nav></header>
+  <main class="container form-page">
+    <div class="form-intro"><span class="eyebrow">QUICK ACCOUNT SETUP</span><h1>Sign up</h1><p>Create a basic account to access the library dashboard demo.</p></div>
+    <form id="signupForm" class="form-card" novalidate>
+      <label>Email address<input id="signupEmail" type="email" placeholder="name@example.com" required></label>
+      <label>Password<input id="signupPassword" type="password" placeholder="Create a password (8+ characters)" required></label>
+      <label class="check-label"><input id="terms" type="checkbox"> I agree to the Terms of Service.</label>
+      <button class="btn btn-primary btn-wide" type="submit">Create account</button>
+      <p id="signupMessage" class="message" role="status"></p>
+      <p class="form-foot">Already have an account? <a href="signin.html">Sign in</a></p>
+    </form>
+  </main>
+  <footer class="site-footer"><span>LibraDesk</span><span>Sign-up page</span></footer>
+</body>
+</html>

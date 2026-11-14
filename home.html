@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Dashboard | LibraDesk</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="layout.css">
+  <script src="theme.js" defer></script><script src="calculator.js" defer></script><script src="chatbot.js" defer></script><script src="library.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">L</span> LibraDesk</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="main-nav"><a href="index.html">Overview</a><a href="register.html">Register</a><a href="signin.html">Sign in</a><button class="theme-toggle" type="button">🌙</button></nav></header>
+  <main class="container dashboard-page">
+    <div class="dashboard-heading"><div><span class="eyebrow">LIBRARY WORKSPACE</span><h1>Library dashboard</h1><p>Manage the catalogue and track book circulation.</p></div><a class="btn btn-primary" href="#addBook">＋ Add a book</a></div>
+    <div class="dashboard-grid">
+      <aside class="sidebar panel">
+        <h3>Navigation</h3><a href="#overview">▦ Overview</a><a href="#catalogue">▤ Book catalogue</a><a href="#addBook">＋ Add book</a><a href="#circulation">↔ Issue / return</a>
+        <div class="sidebar-note"><strong>Quick tip</strong><p>Search by title, author, ISBN or category.</p></div>
+      </aside>
+      <section class="dashboard-main">
+        <section id="overview" class="stats-grid">
+          <article class="stat-card"><span>Total books</span><strong id="totalBooks">0</strong></article>
+          <article class="stat-card"><span>Available</span><strong id="availableBooks">0</strong></article>
+          <article class="stat-card"><span>Issued</span><strong id="issuedBooks">0</strong></article>
+        </section>
+        <section id="catalogue" class="panel section-panel">
+          <div class="panel-heading"><div><h2>Book catalogue</h2><p>Search and view all saved books.</p></div><input id="searchBooks" class="search-input" type="search" placeholder="Search books…"></div>
+          <div class="table-wrap"><table><thead><tr><th>Book title</th><th>Author</th><th>ISBN</th><th>Category</th><th>Status</th><th>Action</th></tr></thead><tbody id="bookRows"></tbody></table></div>
+          <p id="emptyBooks" class="empty-state">No books yet. Add your first book below.</p>
+        </section>
+        <section id="addBook" class="panel section-panel">
+          <div class="panel-heading"><div><h2>Add a book</h2><p>Enter the book details to add it to the catalogue.</p></div></div>
+          <form id="bookForm" class="form-grid compact-form">
+            <label>Book title<input id="bookTitle" required maxlength="80" placeholder="e.g. Web Technology"></label>
+            <label>Author<input id="bookAuthor" required maxlength="60" placeholder="Author name"></label>
+            <label>ISBN / Book ID<input id="bookIsbn" required maxlength="20" placeholder="Unique book ID"></label>
+            <label>Category<input id="bookCategory" required maxlength="40" placeholder="e.g. Computer Science"></label>
+            <button class="btn btn-primary" type="submit">Save book</button>
+          </form>
+          <p id="bookMessage" class="message" role="status"></p>
+        </section>
+        <section id="circulation" class="panel section-panel">
+          <h2>Issue & return status</h2><p>Use the action in the catalogue to issue an available book or mark an issued book as returned.</p>
+          <div id="circulationMessage" class="message" role="status">Book status changes are saved in this browser.</div>
+        </section>
+      </section>
+      <aside class="right-column">
+        <section class="panel side-panel"><h3>Library assistant</h3><p>Ask about adding, searching, issuing or returning books.</p><p class="small-note">Open the chat button at the bottom-right.</p></section>
+        <section class="panel side-panel calculator-card"><h3>Quick calculator</h3><input id="calcDisplay" class="calc-display" type="text" readonly placeholder="0"><div class="calc-keys">
+          <button data-calc="C">C</button><button data-calc="/">÷</button><button data-calc="*">×</button><button data-calc="DEL">⌫</button>
+          <button data-calc="7">7</button><button data-calc="8">8</button><button data-calc="9">9</button><button data-calc="-">−</button>
+          <button data-calc="4">4</button><button data-calc="5">5</button><button data-calc="6">6</button><button data-calc="+">+</button>
+          <button data-calc="1">1</button><button data-calc="2">2</button><button data-calc="3">3</button><button data-calc="=" class="equals">=</button>
+          <button data-calc="0" class="zero">0</button><button data-calc=".">.</button>
+        </div></section>
+      </aside>
+    </div>
+  </main>
+  <button id="chatFab" class="chat-fab" aria-label="Open library assistant">✦</button>
+  <section id="chatPanel" class="chat-panel" aria-label="Library assistant chat" hidden>
+    <div class="chat-head"><strong>Library assistant</strong><button id="closeChat" aria-label="Close chat">×</button></div>
+    <div id="chatLog" class="chat-log"><div class="bot-msg">Hello! Ask me how to add, search, issue or return a book.</div></div>
+    <form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Type a message…" autocomplete="off" required><button type="submit">Send</button></form>
+  </section>
+  <footer class="site-footer"><span>LibraDesk · Library Management System</span><span>Demo data is stored locally in this browser.</span></footer>
+</body>
+</html>

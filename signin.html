@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | LibraDesk</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="layout.css"><script src="theme.js" defer></script><script src="auth.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">L</span> LibraDesk</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="main-nav"><a href="index.html">Overview</a><a href="signup.html">Sign up</a><a href="register.html">Register</a><button class="theme-toggle" type="button">🌙</button></nav></header>
+  <main class="container form-page">
+    <div class="form-intro"><span class="eyebrow">WELCOME BACK</span><h1>Sign in</h1><p>Use your email and password to open the library dashboard.</p></div>
+    <form id="signinForm" class="form-card" novalidate>
+      <label>Email address<input id="signinEmail" type="email" autocomplete="username" placeholder="name@example.com" required></label>
+      <label>Password<div class="password-wrap"><input id="signinPassword" type="password" autocomplete="current-password" placeholder="Your password" required><button id="showPassword" class="show-password" type="button" aria-label="Show password">👁</button></div></label>
+      <button class="btn btn-primary btn-wide" type="submit">Sign in</button>
+      <div id="signinAlert" class="error-banner" role="alert" hidden></div>
+      <p class="form-foot">New member? <a href="signup.html">Create an account</a></p>
+      <p class="small-note">Demo: create an account on the Sign Up page first. This front-end project stores demo credentials in this browser only.</p>
+    </form>
+  </main>
+  <footer class="site-footer"><span>LibraDesk</span><span>Sign-in page</span></footer>
+</body>
+</html>

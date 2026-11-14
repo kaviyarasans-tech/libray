@@ -1,0 +1,16 @@
+/* Layout-specific responsive helpers */
+@media (min-width: 768px) {
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr) 300px;
+  }
+}
+@media (max-width: 767px) {
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard-grid > * {
+    width: 100%;
+  }
+}
